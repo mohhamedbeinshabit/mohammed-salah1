@@ -1,0 +1,227 @@
+الواجب السابق
+        int sum = 0;
+        for (int i = 1; i <= 100; i++) {
+            if (i % 3 == 0 || i % 5 == 0) {
+                Console.WriteLine(i);
+                sum = sum + i;
+            }
+        }
+        Console.WriteLine("Sum: " + sum);
+    }
+
+
+   int num, fact = 1;
+
+            Console.Write("Enter a number: ");
+            num = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 1; i <= num; i++)
+            {
+                fact =fact * i;
+            }
+
+            Console.WriteLine(" Factorial "+ num+ " = "+fact);
+        }
+		
+		}
+
+
+Console.Write("Enter a number: ");
+        int num = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Even numbers starting from {0} in descending order:", num);
+
+        for (int i = num; i >= 0; i--) {
+            if (i % 2 == 0) {
+                Console.WriteLine(i);
+            }
+        }
+    }
+
+ Console.Write("Enter a number: ");
+            int number = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Multiplication table of " + number + ":");
+
+            for (int i = 1; i <= 10; i++)
+            {
+                Console.WriteLine(number + " x " + i + " = " + (number * i));
+            }
+
+        }
+    }
+
+
+ Console.WriteLine("Enter the value of x: ");
+            double x = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Enter the value of n: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            double result = Math.Pow(x, n);
+
+            Console.WriteLine(5+" to the power of "+n+" is "+result);
+        }
+    }
+
+
+  Console.WriteLine("Enter a string:");
+            string str = Console.ReadLine();
+
+            Console.WriteLine("Enter a character:");
+            char ch = Convert.ToChar(Console.ReadLine());
+
+            int count = 0;
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (str[i] == ch)
+                {
+                    count++;
+                }
+            }
+
+            Console.WriteLine("The number of occurrences of "+ch+" in "+str+" is "+count);
+        }
+    }
+
+
+Console.Write("Enter a string: ");
+        string input = Console.ReadLine();
+        char[] charArray = input.ToCharArray();
+        Array.Reverse(charArray);
+        Console.WriteLine(new string(charArray));
+    }
+
+
+
+string inputString ;
+
+Console.Write(" Enter inputString : ");
+
+inputString = Console.ReadLine();
+
+int capitalCount = 0;
+
+foreach (char c in inputString)
+{
+    if (Char.IsUpper(c))
+    {
+        capitalCount++;
+    }
+}
+
+Console.WriteLine("Number of capital letters: " + capitalCount);
+}
+
+
+  Console.Write("Enter a string: ");
+        string input = Console.ReadLine();
+        
+        
+        char[] charArray = input.ToCharArray();
+        Array.Reverse(charArray);
+        string reversed = new String(charArray);
+        
+        
+        if (input == reversed)
+            Console.WriteLine("The string is a palindrome.");
+        else
+            Console.WriteLine("The string is not a palindrome.");
+    }
+
+
+for(int x=1 ;x<=4 ; x++)
+	
+	{
+	for(int j = 1 ;j<=x ; j++)
+	
+	Console.Write("*");
+	Console.Write("\n");
+	
+	}
+	
+	}
+الواجب الثالث
+السوال الاول
+    // تعريف المصفوفة
+        int[,] matrix = new int[,]
+        {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        // طباعة المصفوفة الأصلية
+        Console.WriteLine("Original Matrix:");
+        PrintMatrix(matrix);
+
+        // حساب Transpose المصفوفة
+        int[,] transpose = TransposeMatrix(matrix);
+
+        // طباعة Transpose المصفوفة
+        Console.WriteLine("Transpose Matrix:");
+        PrintMatrix(transpose);
+    }
+
+    static int[,] TransposeMatrix(int[,] matrix)
+    {
+        int rows = matrix.GetLength(0);
+        int cols = matrix.GetLength(1);
+
+        int[,] transpose = new int[cols, rows];
+
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                transpose[j, i] = matrix[i, j];
+            }
+        }
+
+        return transpose;
+    }
+
+    static void PrintMatrix(int[,] matrix)
+    {
+        int rows = matrix.GetLength(0);
+        int cols = matrix.GetLength(1);
+
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                Console.Write("{0} ", matrix[i, j]);
+            }
+            Console.WriteLine();
+        }
+    }
+
+السوال التاني 
+   int[] arr1 = { 1, 2, 3 };
+        int[] arr2 = { 4, 5, 6 };
+
+        int[] result = AddArrays(arr1, arr2);
+
+        Console.WriteLine("Result: ");
+        foreach (int num in result)
+        {
+            Console.Write(num + " ");
+        }
+    }
+
+    static int[] AddArrays(int[] arr1, int[] arr2)
+    {
+        if (arr1.Length != arr2.Length)
+        {
+            throw new ArgumentException("Arrays must have the same length");
+        }
+
+        int[] result = new int[arr1.Length];
+
+        for (int i = 0; i < arr1.Length; i++)
+        {
+            result[i] = arr1[i] + arr2[i];
+        }
+
+        return result;
+    }
